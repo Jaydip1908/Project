@@ -1,3 +1,4 @@
+
 const asyncHandler = require('express-async-handler');
 const User = require('../models/userModel');
 const { generateToken } = require('../config/jwt');
@@ -6,6 +7,7 @@ const { token } = require('morgan');
 
 const registerUser = asyncHandler(async (req, res) => {
   const { name, email, password } = req.body;
+  console.log(req.body);
 
   const userExists = await User.findOne({ email });
   if (userExists) {
@@ -26,6 +28,8 @@ const registerUser = asyncHandler(async (req, res) => {
       email: user.email,
       role: user.role,
       token: generateToken(user._id),
+      massage: 'user register successfully',
+      success:true,
     });
   } else {
     res.status(400);
@@ -46,6 +50,8 @@ const loginUser = asyncHandler(async (req, res) => {
       email: user.email,
       role: user.role,
       token: generateToken(user._id),
+      massage: 'login successfully',
+      success:true,
     });
   } else {
     res.status(401);
@@ -55,5 +61,5 @@ const loginUser = asyncHandler(async (req, res) => {
 
 module.exports = {
   registerUser,
-  loginUser,
+  loginUser,
 };

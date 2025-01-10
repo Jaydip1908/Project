@@ -12,6 +12,8 @@ const createBooking = asyncHandler(async (req, res) => {
     startDate,
     endDate,
     totalPrice,
+    massage: 'user booking successfully',
+    success:true,
   });
 
   res.status(201).json(booking);

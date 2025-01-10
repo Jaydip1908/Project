@@ -13,7 +13,7 @@ const bookingSchema = new mongoose.Schema({
   },
   serviceId: {
     type: mongoose.Schema.Types.ObjectId,
-    // required: true,
+    required: true,
     refPath: 'bookingType',
   },
   startDate: {
@@ -24,10 +24,10 @@ const bookingSchema = new mongoose.Schema({
     type: Date,
     required: true,
   },
-  totalPrice: {
-    type: Number,
-    required: true,
-  },
+  // totalPrice: {
+  //   type: Number,
+  //   required: true,
+  // },
   status: {
     type: String,
     required: true,
