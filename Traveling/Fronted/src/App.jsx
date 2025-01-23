@@ -12,8 +12,8 @@ function App() {
     <div>
       <Navbar />
       <Routes>
-        <Route path="/" element={<BookingForm />} />
-        <Route path="/flightlist" element={<FlightList />} />
+        {/* <Route path="/" element={<BookingForm />} /> */}
+        <Route path="/" element={<FlightList />} />
         <Route path="/hotellist" element={<HotelList />} />
         <Route path="/loginsignup" element={<LoginSignup />} />
       </Routes>

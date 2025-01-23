@@ -133,7 +133,7 @@ const LoginSignup = ({ setShowLogin }) => {
             }
         } catch (error) {
             console.error("Error:", error);
-            alert("An error occurred. Please try again.");
+            alert("Check E-mail and password");
         }
     };
 

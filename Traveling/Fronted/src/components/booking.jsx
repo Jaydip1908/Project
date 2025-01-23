@@ -3,57 +3,57 @@ import { useState } from 'react';
 import axios from 'axios';
 
 function booking() {
-  const [formData, setFormData] = useState({
-          user: '', 
-          bookingType: '',
-          serviceId: '', 
-          startDate:'' ,
-          endDate: '',
-          totalPrice: '',
-          status: '',
-  });
+  // const [formData, setFormData] = useState({
+  //         user: '', 
+  //         bookingType: '',
+  //         serviceId: '', 
+  //         startDate:'' ,
+  //         endDate: '',
+  //         totalPrice: '',
+  //         status: '',
+  // });
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.id]: e.target.value });
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-  
-    try {
-      const token = localStorage.getItem('token'); 
-      if (!token) {
-        alert('You need to log in first.');
-        return;
-      }
-  
-      const response = await axios.post(
-        'http://localhost:8000/api/bookings',
-        {
-          user: '', 
-          bookingType: '',
-          serviceId: '', 
-          startDate: formData.date,
-          endDate: formData.date,
-          totalPrice: '',
-          status: '',
-        },
-        {
-          headers: {
-            Authorization: `Bearer ${token}`, // Include the token
-          },
-        }
-      );
-  
-      alert('Booking successful!');
-      console.log(response.data);
-    } catch (error) {
-      console.error(error);
-      alert('Error creating booking. Check if you are logged in.');
-    }
-  };
+  // const handleChange = (e) => {
+  //   setFormData({ ...formData, [e.target.id]: e.target.value });
   // };
 
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  
+  //   try {
+  //     const token = localStorage.getItem('token'); 
+  //     if (!token) {
+  //       alert('You need to log in first.');
+  //       return;
+  //     }
+  
+  //     const response = await axios.post(
+  //       'http://localhost:8000/api/bookings',
+  //       {
+  //         user: '', 
+  //         bookingType: '',
+  //         serviceId: '', 
+  //         startDate: formData.date,
+  //         endDate: formData.date,
+  //         totalPrice: '',
+  //         status: '',
+  //       },
+  //       {
+  //         headers: {
+  //           Authorization: `Bearer ${token}`, // Include the token
+  //         },
+  //       }
+  //     );
+  
+  //     alert('Booking successful!');
+  //     console.log(response.data);
+  //   } catch (error) {
+  //     console.error(error);
+  //     alert('Error creating booking. Check if you are logged in.');
+  //   }
+  // };
+  // };
+  
   return (
     <div className="container w-50">
       <h1 className="text-center mb-4">Booking Form</h1>

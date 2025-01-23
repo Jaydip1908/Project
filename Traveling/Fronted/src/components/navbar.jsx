@@ -7,13 +7,13 @@ function navbar() {
     <Navbar >
 
       <ul style={{ width: '100%', listStyle: 'none', padding: 0, display: 'flex', gap: '50px', fontSize: 20 }}>
-        <li>
+        {/* <li>
           <Link className="abc" to="/" style={{ textDecoration: 'none', color: 'black', fontWeight: 'bold' }}>
             Booking Form
           </Link>
-        </li>
+        </li> */}
         <li>
-          <Link className="abc" to="/flightlist" style={{ textDecoration: 'none', color: 'black', fontWeight: 'bold' }}>
+          <Link className="abc" to="/" style={{ textDecoration: 'none', color: 'black', fontWeight: 'bold' }}>
             Flight List
           </Link>
         </li>
